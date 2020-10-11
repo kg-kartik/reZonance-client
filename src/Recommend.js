@@ -7,7 +7,7 @@ const Recommend = props => {
   const [result,setResult] = useState([]);
   
   useEffect(() => {
-    Axios.post("https://rezonance-radioactive11.herokuapp.com/recommend", {
+    Axios.post("https://rezonance11.herokuapp.com/recommend", {
       id: props.location.state.id
     }).then(res => {
 	//   res.data.map((elem) => elem.isPlaying = false);

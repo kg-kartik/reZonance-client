@@ -9,12 +9,10 @@ const Search = () => {
   const [result,setResult] = useState([]);
   const [random,setRandom] = useState([]);
 
-  const publicUrl = "https://rezonance-radioactive11.herokuapp.com/"
-
   const history = useHistory();
 
   useEffect(() => {
-    axios.get(publicUrl+"random")
+    axios.get("https://rezonance11.herokuapp.com/random")
     .then((res) => {
         setRandom(res.data);
     })
@@ -27,7 +25,7 @@ const Search = () => {
 
     if((e.target.value).length >=4 && ((e.target.value).length) !== 0) {
 
-        axios.post("https://rezonance-radioactive11.herokuapp.com/search",{
+        axios.post("https://rezonance11.herokuapp.com/search",{
           search_param : e.target.value
         },{
           headers: {
