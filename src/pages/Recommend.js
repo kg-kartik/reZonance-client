@@ -12,7 +12,6 @@ const Recommend = (props) => {
 			id: props.location.state.id,
 		}).then((res) => {
 			setResult(res.data);
-			console.log(res.data, 'result');
 		});
 	}, []);
 

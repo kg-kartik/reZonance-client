@@ -21,7 +21,6 @@ const Search = () => {
 
 	const getResults = (e) => {
 		setSearch(e.target.value);
-		console.log(e.target.value);
 
 		if (e.target.value.length >= 4 && e.target.value.length !== 0) {
 			axios
@@ -37,7 +36,6 @@ const Search = () => {
 					}
 				)
 				.then((res) => {
-					console.log(res.data.search_results);
 					setResult(res.data.search_results);
 					setRandom(null);
 				});
@@ -45,14 +43,11 @@ const Search = () => {
 	};
 
 	const getId = (id, song) => {
-		console.log(id);
 		history.push({
 			pathname: '/recommend',
 			state: { id, song },
 		});
 	};
-
-	console.log(random, 'random', result, 'result');
 
 	return (
 		<div>
