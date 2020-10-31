@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import '../styles/App.css';
 
-const Recommend = props => {
+const Recommend = (props) => {
+	const url = process.env.REACT_APP_API_URL;
+
 	const [result, setResult] = useState([]);
 
 	useEffect(() => {
-		Axios.post('https://18.141.188.196/recommend', {
-			id: props.location.state.id
-		}).then(res => {
+		Axios.post(url + 'recommend', {
+			id: props.location.state.id,
+		}).then((res) => {
 			setResult(res.data);
 			console.log(res.data, 'result');
 		});
